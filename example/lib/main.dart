@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:visc_utils/visc_utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,11 +29,53 @@ class ExampleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Visc Utils Example',
+          style: ViscTypo.titleMedium(context),
         ),
       ),
-      body: const Placeholder(),
+      backgroundColor: Colors.grey[200],
+      body: ListView(
+        padding: viscHorizontalMargin(context),
+        children: [
+          Container(
+            color: Colors.purpleAccent.withOpacity(.5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Lisview use Horizontal Margin',
+                  style: ViscTypo.titleMedium(context),
+                ),
+                Container(
+                  color: Colors.blueAccent.withOpacity(.5),
+                  padding: viscHorizontalMargin(context),
+                  child: Text(
+                    'Horizontal Padding',
+                    style: ViscTypo.titleMedium(context),
+                  ),
+                ),
+                Container(
+                  color: Colors.greenAccent.withOpacity(.5),
+                  padding: viscVerticalPadding(context),
+                  child: Text(
+                    'Vertical Padding',
+                    style: ViscTypo.titleMedium(context),
+                  ),
+                ),
+                Container(
+                  color: Colors.yellowAccent.withOpacity(.5),
+                  padding: viscAllPadding(context),
+                  child: Text(
+                    'All Padding',
+                    style: ViscTypo.titleMedium(context),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
