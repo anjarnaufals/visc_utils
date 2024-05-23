@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Visc Utils Example',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -47,22 +48,20 @@ class ExampleWidget extends StatelessWidget {
                   'Lisview use Horizontal Margin',
                   style: ViscTypo.bodyMedium(context),
                 ),
-                Stack(
-                  children: [
-                    Container(
-                      color: Colors.blueAccent.withOpacity(.5),
-                      padding: viscHorizontalMargin(context),
-                      child: Text(
-                        'Horizontal Margin',
-                        style: ViscTypo.bodyMedium(context),
-                      ),
-                    ),
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('data'),
-                    )
-                  ],
+                const Divider(),
+                Text(
+                  'Horizontal Margin Value : ${baseMargin(context)}',
                 ),
+                Container(
+                  color: Colors.blueAccent.withOpacity(.5),
+                  padding: viscHorizontalMargin(context),
+                  child: Text(
+                    'Horizontal Margin',
+                    style: ViscTypo.bodyMedium(context),
+                  ),
+                ),
+                const Divider(),
+                Text('Vertical Padding Value :${basePadding(context)}'),
                 Container(
                   color: Colors.greenAccent.withOpacity(.5),
                   padding: viscVerticalPadding(context),
@@ -71,6 +70,8 @@ class ExampleWidget extends StatelessWidget {
                     style: ViscTypo.bodyMedium(context),
                   ),
                 ),
+                const Divider(),
+                Text('All Padding Value :${basePadding(context)}'),
                 Container(
                   color: Colors.yellowAccent.withOpacity(.5),
                   padding: viscAllPadding(context),
@@ -82,6 +83,7 @@ class ExampleWidget extends StatelessWidget {
               ],
             ),
           ),
+          const Divider(),
           Container(
             color: Colors.blueAccent.withOpacity(.5),
             child: Column(
@@ -99,9 +101,58 @@ class ExampleWidget extends StatelessWidget {
                   'Display Small',
                   style: ViscTypo.displaySmall(context),
                 ),
+                Text(
+                  'Headline Large',
+                  style: ViscTypo.headlineLarge(context),
+                ),
+                Text(
+                  'Headline Medium',
+                  style: ViscTypo.headlineMedium(context),
+                ),
+                Text(
+                  'Headline Small',
+                  style: ViscTypo.headlineSmall(context),
+                ),
+                Text(
+                  'Title Large',
+                  style: ViscTypo.titleLarge(context),
+                ),
+                Text(
+                  'Title Medium',
+                  style: ViscTypo.titleMedium(context),
+                ),
+                Text(
+                  'Title Small',
+                  style: ViscTypo.titleSmall(context),
+                ),
+                Text(
+                  'Label Large',
+                  style: ViscTypo.labelLarge(context),
+                ),
+                Text(
+                  'Label Medium',
+                  style: ViscTypo.labelMedium(context),
+                ),
+                Text(
+                  'Label Small',
+                  style: ViscTypo.labelSmall(context),
+                ),
+                Text(
+                  'Body Large',
+                  style: ViscTypo.bodyLarge(context),
+                ),
+                Text(
+                  'Body Medium',
+                  style: ViscTypo.bodyMedium(context),
+                ),
+                Text(
+                  'Body Small',
+                  style: ViscTypo.bodySmall(context),
+                ),
               ],
             ),
           ),
+          const SizedBox(height: kToolbarHeight),
         ],
       ),
     );
