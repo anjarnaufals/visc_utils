@@ -24,7 +24,7 @@ const double expandedDefault = 24;
 // range in N >= 1600  dp/lp
 const double extraLargeDefault = 24;
 
-double _baseMargin(BuildContext context) {
+double baseMargin(BuildContext context) {
   double screenWidth = MediaQuery.of(context).size.width;
 
   if (screenWidth < 600) {
@@ -46,6 +46,6 @@ double _baseMargin(BuildContext context) {
 }
 
 EdgeInsets viscHorizontalMargin(BuildContext context) {
-  double horizontalMargin = _baseMargin(context);
+  double horizontalMargin = baseMargin(context);
   return EdgeInsets.symmetric(horizontal: horizontalMargin);
 }

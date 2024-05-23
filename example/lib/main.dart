@@ -45,22 +45,30 @@ class ExampleWidget extends StatelessWidget {
               children: [
                 Text(
                   'Lisview use Horizontal Margin',
-                  style: ViscTypo.titleMedium(context),
+                  style: ViscTypo.bodyMedium(context),
                 ),
-                Container(
-                  color: Colors.blueAccent.withOpacity(.5),
-                  padding: viscHorizontalMargin(context),
-                  child: Text(
-                    'Horizontal Padding',
-                    style: ViscTypo.titleMedium(context),
-                  ),
+                Stack(
+                  children: [
+                    Container(
+                      color: Colors.blueAccent.withOpacity(.5),
+                      padding: viscHorizontalMargin(context),
+                      child: Text(
+                        'Horizontal Margin',
+                        style: ViscTypo.bodyMedium(context),
+                      ),
+                    ),
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('data'),
+                    )
+                  ],
                 ),
                 Container(
                   color: Colors.greenAccent.withOpacity(.5),
                   padding: viscVerticalPadding(context),
                   child: Text(
                     'Vertical Padding',
-                    style: ViscTypo.titleMedium(context),
+                    style: ViscTypo.bodyMedium(context),
                   ),
                 ),
                 Container(
@@ -68,8 +76,28 @@ class ExampleWidget extends StatelessWidget {
                   padding: viscAllPadding(context),
                   child: Text(
                     'All Padding',
-                    style: ViscTypo.titleMedium(context),
+                    style: ViscTypo.bodyMedium(context),
                   ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.blueAccent.withOpacity(.5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Display Large',
+                  style: ViscTypo.displayLarge(context),
+                ),
+                Text(
+                  'Display Medium',
+                  style: ViscTypo.displayMedium(context),
+                ),
+                Text(
+                  'Display Small',
+                  style: ViscTypo.displaySmall(context),
                 ),
               ],
             ),

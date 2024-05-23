@@ -121,7 +121,7 @@ run pub upgrade
 
 ```dart
 Padding(
-	padding: viscHorizontalMargin,
+	padding: viscHorizontalMargin(context),
 	child: YourWidget(),
 	),
 ),
@@ -131,7 +131,7 @@ Padding(
 
 ```dart
 Padding(
-	padding: viscHorizontalPadding,
+	padding: viscHorizontalPadding(context),
 	child: YourWidget(),
 	),
 ),
@@ -141,7 +141,7 @@ Padding(
 
 ```dart
 Padding(
-	padding: viscVerticalPadding,
+	padding: viscVerticalPadding(context),
 	child: YourWidget(),
 	),
 ),
@@ -151,7 +151,7 @@ Padding(
 
 ```dart
 Padding(
-	padding: viscAllPadding,
+	padding: viscAllPadding(context),
 	child: YourWidget(),
 	),
 ),
