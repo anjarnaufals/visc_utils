@@ -101,9 +101,11 @@ https://fluent2.microsoft.design/layout
 
 ## prerequisites
 
+```yaml
 environment:
-sdk: '>=3.4.0 <4.0.0'
+sdk: ">=3.4.0 <4.0.0"
 flutter: ">=1.17.0"
+```
 
 ## Installation
 
