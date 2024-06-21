@@ -203,12 +203,10 @@ packages:
   visc_utils:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: "2ded254a73deb827e80a473ea7a071fc1676f93d"
-      url: "https://github.com/anjarnaufals/visc_utils"
-    source: git
-    version: "0.0.2"
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.3"
   vm_service:
     dependency: transitive
     description:

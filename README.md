@@ -99,6 +99,12 @@ https://fluent2.microsoft.design/layout
 | `displayMedium`  | 45                | Medium display text  |
 | `displayLarge`   | 57                | Large display text   |
 
+## prerequisites
+
+environment:
+sdk: '>=3.4.0 <4.0.0'
+flutter: ">=1.17.0"
+
 ## Installation
 
 Add this to your package's `pubspec.yaml` file:
@@ -127,7 +133,23 @@ Padding(
 ),
 ```
 
-- Responsive Padding Horizontal
+```dart
+Padding(
+	padding: viscVerticalMargin(context),
+	child: YourWidget(),
+	),
+),
+```
+
+```dart
+Padding(
+	padding: viscAllMargin(context),
+	child: YourWidget(),
+	),
+),
+```
+
+- Responsive Padding
 
 ```dart
 Padding(
@@ -137,8 +159,6 @@ Padding(
 ),
 ```
 
-- Responsive Padding Vertical
-
 ```dart
 Padding(
 	padding: viscVerticalPadding(context),
@@ -146,8 +166,6 @@ Padding(
 	),
 ),
 ```
-
-- Responsive Padding All
 
 ```dart
 Padding(

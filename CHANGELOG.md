@@ -1,3 +1,8 @@
+## 0.0.4
+
+- add verticalMargin
+- add horizontalMargin
+
 ## 0.0.3
 
 - change baseMargin() - basePadding() becom public, update example

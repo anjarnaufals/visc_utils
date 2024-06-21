@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:visc_utils/visc_utils.dart';
 
+const designWidth = 1280;
+
 void main() {
   runApp(const MyApp());
 }
@@ -36,123 +38,156 @@ class ExampleWidget extends StatelessWidget {
         ),
       ),
       backgroundColor: Colors.grey[200],
-      body: ListView(
-        padding: viscHorizontalMargin(context),
-        children: [
-          Container(
-            color: Colors.purpleAccent.withOpacity(.5),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: viscHorizontalMargin(context),
+            sliver: SliverGrid.builder(
+              itemCount: 20,
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 300,
+                childAspectRatio: 4 / 5,
+                crossAxisSpacing: baseMargin(context),
+                mainAxisSpacing: baseMargin(context),
+              ),
+              itemBuilder: (_, index) {
+                return Container(
+                  padding: viscAllPadding(context),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    children: [
+                      Flexible(
+                        child: Image.network('https://picsum.photos/200/300'),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+          SliverPadding(
+            padding: viscHorizontalMargin(context),
+            sliver: SliverList.list(
               children: [
-                Text(
-                  'Lisview use Horizontal Margin',
-                  style: ViscTypo.bodyMedium(context),
+                Container(
+                  color: Colors.purpleAccent.withOpacity(.5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Lisview use Horizontal Margin',
+                        style: ViscTypo.bodyMedium(context),
+                      ),
+                      const Divider(),
+                      Text(
+                        'Horizontal Margin Value : ${baseMargin(context)}',
+                      ),
+                      Container(
+                        color: Colors.blueAccent.withOpacity(.5),
+                        padding: viscHorizontalMargin(context),
+                        child: Text(
+                          'Horizontal Margin',
+                          style: ViscTypo.bodyMedium(context),
+                        ),
+                      ),
+                      const Divider(),
+                      Text('Vertical Padding Value :${basePadding(context)}'),
+                      Container(
+                        color: Colors.greenAccent.withOpacity(.5),
+                        padding: viscVerticalPadding(context),
+                        child: Text(
+                          'Vertical Padding',
+                          style: ViscTypo.bodyMedium(context),
+                        ),
+                      ),
+                      const Divider(),
+                      Text('All Padding Value :${basePadding(context)}'),
+                      Container(
+                        color: Colors.yellowAccent.withOpacity(.5),
+                        padding: viscAllPadding(context),
+                        child: Text(
+                          'All Padding',
+                          style: ViscTypo.bodyMedium(context),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 const Divider(),
-                Text(
-                  'Horizontal Margin Value : ${baseMargin(context)}',
-                ),
                 Container(
                   color: Colors.blueAccent.withOpacity(.5),
-                  padding: viscHorizontalMargin(context),
-                  child: Text(
-                    'Horizontal Margin',
-                    style: ViscTypo.bodyMedium(context),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Display Large',
+                        style: ViscTypo.displayLarge(context),
+                      ),
+                      Text(
+                        'Display Medium',
+                        style: ViscTypo.displayMedium(context),
+                      ),
+                      Text(
+                        'Display Small',
+                        style: ViscTypo.displaySmall(context),
+                      ),
+                      Text(
+                        'Headline Large',
+                        style: ViscTypo.headlineLarge(context),
+                      ),
+                      Text(
+                        'Headline Medium',
+                        style: ViscTypo.headlineMedium(context),
+                      ),
+                      Text(
+                        'Headline Small',
+                        style: ViscTypo.headlineSmall(context),
+                      ),
+                      Text(
+                        'Title Large',
+                        style: ViscTypo.titleLarge(context),
+                      ),
+                      Text(
+                        'Title Medium',
+                        style: ViscTypo.titleMedium(context),
+                      ),
+                      Text(
+                        'Title Small',
+                        style: ViscTypo.titleSmall(context),
+                      ),
+                      Text(
+                        'Label Large',
+                        style: ViscTypo.labelLarge(context),
+                      ),
+                      Text(
+                        'Label Medium',
+                        style: ViscTypo.labelMedium(context),
+                      ),
+                      Text(
+                        'Label Small',
+                        style: ViscTypo.labelSmall(context),
+                      ),
+                      Text(
+                        'Body Large',
+                        style: ViscTypo.bodyLarge(context),
+                      ),
+                      Text(
+                        'Body Medium',
+                        style: ViscTypo.bodyMedium(context),
+                      ),
+                      Text(
+                        'Body Small',
+                        style: ViscTypo.bodySmall(context),
+                      ),
+                    ],
                   ),
                 ),
-                const Divider(),
-                Text('Vertical Padding Value :${basePadding(context)}'),
-                Container(
-                  color: Colors.greenAccent.withOpacity(.5),
-                  padding: viscVerticalPadding(context),
-                  child: Text(
-                    'Vertical Padding',
-                    style: ViscTypo.bodyMedium(context),
-                  ),
-                ),
-                const Divider(),
-                Text('All Padding Value :${basePadding(context)}'),
-                Container(
-                  color: Colors.yellowAccent.withOpacity(.5),
-                  padding: viscAllPadding(context),
-                  child: Text(
-                    'All Padding',
-                    style: ViscTypo.bodyMedium(context),
-                  ),
-                ),
+                const SizedBox(height: kToolbarHeight),
               ],
             ),
           ),
-          const Divider(),
-          Container(
-            color: Colors.blueAccent.withOpacity(.5),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Display Large',
-                  style: ViscTypo.displayLarge(context),
-                ),
-                Text(
-                  'Display Medium',
-                  style: ViscTypo.displayMedium(context),
-                ),
-                Text(
-                  'Display Small',
-                  style: ViscTypo.displaySmall(context),
-                ),
-                Text(
-                  'Headline Large',
-                  style: ViscTypo.headlineLarge(context),
-                ),
-                Text(
-                  'Headline Medium',
-                  style: ViscTypo.headlineMedium(context),
-                ),
-                Text(
-                  'Headline Small',
-                  style: ViscTypo.headlineSmall(context),
-                ),
-                Text(
-                  'Title Large',
-                  style: ViscTypo.titleLarge(context),
-                ),
-                Text(
-                  'Title Medium',
-                  style: ViscTypo.titleMedium(context),
-                ),
-                Text(
-                  'Title Small',
-                  style: ViscTypo.titleSmall(context),
-                ),
-                Text(
-                  'Label Large',
-                  style: ViscTypo.labelLarge(context),
-                ),
-                Text(
-                  'Label Medium',
-                  style: ViscTypo.labelMedium(context),
-                ),
-                Text(
-                  'Label Small',
-                  style: ViscTypo.labelSmall(context),
-                ),
-                Text(
-                  'Body Large',
-                  style: ViscTypo.bodyLarge(context),
-                ),
-                Text(
-                  'Body Medium',
-                  style: ViscTypo.bodyMedium(context),
-                ),
-                Text(
-                  'Body Small',
-                  style: ViscTypo.bodySmall(context),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: kToolbarHeight),
         ],
       ),
     );

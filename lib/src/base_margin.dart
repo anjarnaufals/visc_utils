@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 // compact
 // range in n < 600 dp/lp
 
-const double mobileExtraSmall = 8;
-const double mobileSmall = 12;
+// const double mobileExtraSmall = 8;
+// const double mobileSmall = 12;
 const double mobileDefault = 16;
 
 // tablet
 // medium
 // range between 600 <N> 839 dp/lp
-const double tabletExtraSmall = 16;
-const double tabletSmall = 20;
+// const double tabletExtraSmall = 16;
+// const double tabletSmall = 20;
 const double tabletDefault = 24;
 
 // expanded, Large,
@@ -48,4 +48,14 @@ double baseMargin(BuildContext context) {
 EdgeInsets viscHorizontalMargin(BuildContext context) {
   double horizontalMargin = baseMargin(context);
   return EdgeInsets.symmetric(horizontal: horizontalMargin);
+}
+
+EdgeInsets viscVerticalMargin(BuildContext context) {
+  double verticalMargin = baseMargin(context);
+  return EdgeInsets.symmetric(vertical: verticalMargin);
+}
+
+EdgeInsets viscAllMargin(BuildContext context) {
+  double allMargin = baseMargin(context);
+  return EdgeInsets.all(allMargin);
 }
