@@ -22,8 +22,9 @@ This package provides utility functions to create responsive margins, paddings, 
 
 - **Responsive Margin**
 
-Based on the following references:
-https://m3.material.io/foundations/layout/applying-layout/window-size-classes
+Based on the following reference:
+
+[Material Design M3 Window Size Classes](https://m3.material.io/foundations/layout/applying-layout/window-size-classes)
 
 | Device Type | Size        | Description                                                         |
 | ----------- | ----------- | ------------------------------------------------------------------- |
@@ -48,7 +49,7 @@ https://m3.material.io/foundations/layout/applying-layout/window-size-classes
 
 Based on the following references:
 
-https://matthewjamestaylor.com/responsive-padding#:~:text=Optimal%20Padding%20Sizes%20Per%20Screen,progressively%20wider%20for%20larger%20screens.
+[Optimal Padding Sizes Per Screen Width](https://matthewjamestaylor.com/responsive-padding#:~:text=Optimal%20Padding%20Sizes%20Per%20Screen,progressively%20wider%20for%20larger%20screens)
 
 | Screen Width Range (px) | Padding (lp) | Description                |
 | ----------------------- | ------------ | -------------------------- |
@@ -67,9 +68,11 @@ https://matthewjamestaylor.com/responsive-padding#:~:text=Optimal%20Padding%20Si
 - **Responsive Font Size**
 
 Based on the following references:
-https://api.flutter.dev/flutter/material/TextTheme-class.html
-https://m3.material.io/styles/typography/type-scale-tokens
-https://fluent2.microsoft.design/layout
+[Flutter Material TextTheme Class](https://api.flutter.dev/flutter/material/TextTheme-class.html): Documentation on Flutter's `TextTheme` class for managing text styles in your Flutter app.
+
+[Material M3 Typography Type Scale Tokens](https://m3.material.io/styles/typography/type-scale-tokens): Guidelines on typography and type scale tokens in Material Design M3, useful for consistent text styling.
+
+[Fluent Design System 2 Layout](https://fluent2.microsoft.design/layout): Detailed guidance on layout principles in the Fluent Design System 2.
 
 | Screen Width Range (px) | Multiplier         | Description       |
 | ----------------------- | ------------------ | ----------------- |
@@ -98,6 +101,39 @@ https://fluent2.microsoft.design/layout
 | `displaySmall`   | 36                | Small display text   |
 | `displayMedium`  | 45                | Medium display text  |
 | `displayLarge`   | 57                | Large display text   |
+
+
+- **Fluent Design System 2 Layout Reference**
+
+For detailed guidance on layout in the Fluent Design System 2, refer to the [Fluent Design System 2 Layout](https://fluent2.microsoft.design/layout) documentation.
+
+| Screen Size | Width Range (dp) | Breakpoint (px)          |
+|-------------|-------------------|-------------------------|
+| Small       | 320 - 479         | 640px or less           |
+| Medium      | 480 - 639         | 641px to 1007px         |
+| Large       | 640 - 1023        | 1008px and larger       |
+| X-Large     | 1024 - 1365       | 1008px and larger       |
+| XX-Large    | 1366 - 1919       | 1008px and larger       |
+| XXX-Large   | 1920 and up       | 1008px and larger       |
+
+- **Material Design M3 Window Size Classes Reference**
+
+For detailed information on applying window size classes in Material Design M3, refer to the [Material Design M3 Window Size Classes](https://m3.material.io/foundations/layout/applying-layout/window-size-classes) documentation.
+
+| Window Class | Breakpoint (dp)      | Common Devices                                |
+|--------------|----------------------|-----------------------------------------------|
+| Compact      | Width < 600          | Phone in portrait                             |
+| Medium       | 600 ≤ width < 840    | Tablet in portrait                            |
+|              |                      | Foldable in portrait (unfolded)               |
+| Expanded     | 840 ≤ width < 1200*  | Phone in landscape                            |
+|              |                      | Tablet in landscape                           |
+|              |                      | Foldable in landscape (unfolded)              |
+|              |                      | Desktop                                       |
+| Large        | 1200 ≤ width < 1600  | Desktop                                       |
+| Extra-large  | 1600 ≤ width         | Desktop                                       |
+|			   |                      | Ultra-wide                                    |
+
+
 
 ## prerequisites
 
@@ -131,7 +167,6 @@ run pub upgrade
 Padding(
 	padding: viscHorizontalMargin(context),
 	child: YourWidget(),
-	),
 ),
 ```
 
@@ -139,7 +174,6 @@ Padding(
 Padding(
 	padding: viscVerticalMargin(context),
 	child: YourWidget(),
-	),
 ),
 ```
 
@@ -147,7 +181,6 @@ Padding(
 Padding(
 	padding: viscAllMargin(context),
 	child: YourWidget(),
-	),
 ),
 ```
 
@@ -157,7 +190,6 @@ Padding(
 Padding(
 	padding: viscHorizontalPadding(context),
 	child: YourWidget(),
-	),
 ),
 ```
 
@@ -165,7 +197,6 @@ Padding(
 Padding(
 	padding: viscVerticalPadding(context),
 	child: YourWidget(),
-	),
 ),
 ```
 
@@ -173,17 +204,61 @@ Padding(
 Padding(
 	padding: viscAllPadding(context),
 	child: YourWidget(),
-	),
 ),
 ```
 
 - Responsive Font Size
 
 ```dart
- Text(
-          'Display Large',
-          style: ViscTypo.displayLarge(context),
-        ),
+Text(
+    'Display Large',
+    style: ViscTypo.displayLarge(context),
+),
+```
+
+- Fluent 2 layout size extension on BuildContext
+
+```dart
+	var screenSize = context.material3Layout;
+```
+
+- Flutent 2 Layout Widget
+
+```dart
+Builder(
+	builder: (context) {
+		return Fluent2LayoutWidget(
+			small: yourSmallLayoutSystemWidget(),
+			medium: yourMediumLayoutSystemWidget(),
+			large: yourLargeLayoutSystemWidget(),
+			xLarge: yourxLargeLayoutSystemWidget(),
+			xxLarge: yourxxLargeLayoutSystemWidget(),
+			xxxLarge: yourxxxLargeLayoutSystemWidget(),
+		);
+	},
+),
+```
+
+- Material 3 layout size extension on BuildContext
+
+```dart
+	var screenSize = context.fluent2Layout;
+```
+
+- Material 3 Layout Widget
+
+```dart
+ Builder(
+		builder: (context) {
+			return Material3LayoutWidget(
+				compact: yourCompactLayoutSystemWidget(),
+				medium: yourMediumLayoutSystemWidget(),
+				large: yourLargeLayoutSystemWidget(),
+				extraLarge: yourExtraLargeLayoutSystemWidget(),
+				expanded: yourExpandedLargeLayoutSystemWidget(),
+			);
+		},
+    ),
 ```
 
 ## Contributing
