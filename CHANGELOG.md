@@ -1,3 +1,9 @@
+## 0.0.6
+
+chore
+
+- update example
+
 ## 0.0.5
 
 - Add media query size extension base on Fluent 2 layout rule 
