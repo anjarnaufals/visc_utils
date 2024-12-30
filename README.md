@@ -102,38 +102,35 @@ Based on the following references:
 | `displayMedium`  | 45                | Medium display text  |
 | `displayLarge`   | 57                | Large display text   |
 
-
 - **Fluent Design System 2 Layout Reference**
 
 For detailed guidance on layout in the Fluent Design System 2, refer to the [Fluent Design System 2 Layout](https://fluent2.microsoft.design/layout) documentation.
 
-| Screen Size | Width Range (dp) | Breakpoint (px)          |
-|-------------|-------------------|-------------------------|
-| Small       | 320 - 479         | 640px or less           |
-| Medium      | 480 - 639         | 641px to 1007px         |
-| Large       | 640 - 1023        | 1008px and larger       |
-| X-Large     | 1024 - 1365       | 1008px and larger       |
-| XX-Large    | 1366 - 1919       | 1008px and larger       |
-| XXX-Large   | 1920 and up       | 1008px and larger       |
+| Screen Size | Width Range (dp) | Breakpoint (px)   |
+| ----------- | ---------------- | ----------------- |
+| Small       | 320 - 479        | 640px or less     |
+| Medium      | 480 - 639        | 641px to 1007px   |
+| Large       | 640 - 1023       | 1008px and larger |
+| X-Large     | 1024 - 1365      | 1008px and larger |
+| XX-Large    | 1366 - 1919      | 1008px and larger |
+| XXX-Large   | 1920 and up      | 1008px and larger |
 
 - **Material Design M3 Window Size Classes Reference**
 
 For detailed information on applying window size classes in Material Design M3, refer to the [Material Design M3 Window Size Classes](https://m3.material.io/foundations/layout/applying-layout/window-size-classes) documentation.
 
-| Window Class | Breakpoint (dp)      | Common Devices                                |
-|--------------|----------------------|-----------------------------------------------|
-| Compact      | Width < 600          | Phone in portrait                             |
-| Medium       | 600 ≤ width < 840    | Tablet in portrait                            |
-|              |                      | Foldable in portrait (unfolded)               |
-| Expanded     | 840 ≤ width < 1200*  | Phone in landscape                            |
-|              |                      | Tablet in landscape                           |
-|              |                      | Foldable in landscape (unfolded)              |
-|              |                      | Desktop                                       |
-| Large        | 1200 ≤ width < 1600  | Desktop                                       |
-| Extra-large  | 1600 ≤ width         | Desktop                                       |
-|			   |                      | Ultra-wide                                    |
-
-
+| Window Class | Breakpoint (dp)      | Common Devices                   |
+| ------------ | -------------------- | -------------------------------- |
+| Compact      | Width < 600          | Phone in portrait                |
+| Medium       | 600 ≤ width < 840    | Tablet in portrait               |
+|              |                      | Foldable in portrait (unfolded)  |
+| Expanded     | 840 ≤ width < 1200\* | Phone in landscape               |
+|              |                      | Tablet in landscape              |
+|              |                      | Foldable in landscape (unfolded) |
+|              |                      | Desktop                          |
+| Large        | 1200 ≤ width < 1600  | Desktop                          |
+| Extra-large  | 1600 ≤ width         | Desktop                          |
+|              |                      | Ultra-wide                       |
 
 ## prerequisites
 
@@ -180,29 +177,6 @@ Padding(
 ```dart
 Padding(
 	padding: viscAllMargin(context),
-	child: YourWidget(),
-),
-```
-
-- Responsive Padding
-
-```dart
-Padding(
-	padding: viscHorizontalPadding(context),
-	child: YourWidget(),
-),
-```
-
-```dart
-Padding(
-	padding: viscVerticalPadding(context),
-	child: YourWidget(),
-),
-```
-
-```dart
-Padding(
-	padding: viscAllPadding(context),
 	child: YourWidget(),
 ),
 ```

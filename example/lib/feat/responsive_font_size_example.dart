@@ -7,7 +7,7 @@ class ResponsiveFontSizeExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueAccent.withOpacity(.5),
+      color: Colors.blueAccent.withValues(alpha: .5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

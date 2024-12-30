@@ -24,7 +24,7 @@ const double expandedDefault = 24;
 // range in N >= 1600  dp/lp
 const double extraLargeDefault = 24;
 
-double baseMargin(BuildContext context) {
+double baseMarginM3(BuildContext context) {
   double screenWidth = MediaQuery.of(context).size.width;
 
   if (screenWidth < 600) {
@@ -43,19 +43,4 @@ double baseMargin(BuildContext context) {
     // Default margin
     return mobileDefault;
   }
-}
-
-EdgeInsets viscHorizontalMargin(BuildContext context) {
-  double horizontalMargin = baseMargin(context);
-  return EdgeInsets.symmetric(horizontal: horizontalMargin);
-}
-
-EdgeInsets viscVerticalMargin(BuildContext context) {
-  double verticalMargin = baseMargin(context);
-  return EdgeInsets.symmetric(vertical: verticalMargin);
-}
-
-EdgeInsets viscAllMargin(BuildContext context) {
-  double allMargin = baseMargin(context);
-  return EdgeInsets.all(allMargin);
 }

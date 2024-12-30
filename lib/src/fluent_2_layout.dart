@@ -8,7 +8,8 @@ class Fluent2Layout {
 
   const Fluent2Layout(this.name, this.minWidth, this.maxWidth, this.breakpoint);
 
-  static const Fluent2Layout small = Fluent2Layout('Small', 320, 479, 640);
+  // static const Fluent2Layout small = Fluent2Layout('Small', 320, 479, 640);
+  static const Fluent2Layout small = Fluent2Layout('Small', 0, 479, 640);
   static const Fluent2Layout medium = Fluent2Layout('Medium', 480, 639, 1007);
   static const Fluent2Layout large = Fluent2Layout('Large', 640, 1023, 1008);
   static const Fluent2Layout xLarge =

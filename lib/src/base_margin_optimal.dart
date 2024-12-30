@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-double basePadding(BuildContext context) {
+double baseMarginOptimal(BuildContext context) {
   double screenWidth = MediaQuery.of(context).size.width;
 
   if (screenWidth <= 320) {
@@ -21,24 +21,7 @@ double basePadding(BuildContext context) {
     return 32.0;
   } else if (screenWidth <= 1920) {
     return 38.0;
-  } else if (screenWidth <= 2560) {
-    return 48.0;
   } else {
     return 48.0; // Default for screens larger than 2560px
   }
-}
-
-EdgeInsets viscHorizontalPadding(BuildContext context) {
-  double horizontalMargin = basePadding(context);
-  return EdgeInsets.symmetric(horizontal: horizontalMargin);
-}
-
-EdgeInsets viscVerticalPadding(BuildContext context) {
-  double horizontalMargin = basePadding(context);
-  return EdgeInsets.symmetric(vertical: horizontalMargin);
-}
-
-EdgeInsets viscAllPadding(BuildContext context) {
-  double allMargin = basePadding(context);
-  return EdgeInsets.all(allMargin);
 }

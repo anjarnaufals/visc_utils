@@ -94,10 +94,7 @@ class ViscTypo {
             fontSize: _baseFontSize(context, 45),
           );
 
-  static TextStyle? displayLarge(
-    BuildContext context, {
-    bool usePerceipedSize = false,
-  }) =>
+  static TextStyle? displayLarge(BuildContext context) =>
       Theme.of(context).textTheme.displayLarge?.copyWith(
             fontSize: _baseFontSize(context, 57),
           );
