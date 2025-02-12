@@ -50,13 +50,13 @@ extension MediaQueryExtension on BuildContext {
 }
 
 extension GenericFluent2LayoutValues on BuildContext {
-  T fluent2LayoutValueOf<T>({
-    required T small,
-    required T medium,
-    required T large,
-    required T xLarge,
-    required T xxLarge,
-    required T xxxLarge,
+  T? fluent2LayoutValueOf<T>({
+    T? small,
+    T? medium,
+    T? large,
+    T? xLarge,
+    T? xxLarge,
+    T? xxxLarge,
   }) {
     final layout = fluent2Layout;
     if (layout == Fluent2Layout.small) {

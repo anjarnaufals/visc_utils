@@ -1,3 +1,8 @@
+## 0.0.9
+
+- change parameter of two extension on BuildContext, these are fluent2LayoutValueOf & m3LayoutValueOf become nullable
+
+
 ## 0.0.8
 
 - add two extension on BuildContext, these are fluent2LayoutValueOf & m3LayoutValueOf

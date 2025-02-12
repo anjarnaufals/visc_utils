@@ -37,12 +37,12 @@ extension MediaQueryM3Extension on BuildContext {
 }
 
 extension GenericM3LayoutValues on BuildContext {
-  T m3LayoutValueOf<T>({
-    required T compact,
-    required T medium,
-    required T expanded,
-    required T large,
-    required T extraLarge,
+  T? m3LayoutValueOf<T>({
+    T? compact,
+    T? medium,
+    T? expanded,
+    T? large,
+    T? extraLarge,
   }) {
     final layout = material3Layout;
     if (layout == Material3Layout.compact) {

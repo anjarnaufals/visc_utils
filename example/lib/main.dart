@@ -271,7 +271,6 @@ class MaterialLayoutExample extends StatelessWidget {
             medium: BoxFit.cover,
             expanded: BoxFit.fill,
             large: BoxFit.fitWidth,
-            extraLarge: BoxFit.fitHeight,
           )}",
           style: ViscTypo.titleLarge(context),
         ),
