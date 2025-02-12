@@ -222,17 +222,41 @@ Builder(
 - Material 3 Layout Widget
 
 ```dart
- Builder(
-		builder: (context) {
-			return Material3LayoutWidget(
-				compact: yourCompactLayoutSystemWidget(),
-				medium: yourMediumLayoutSystemWidget(),
-				large: yourLargeLayoutSystemWidget(),
-				extraLarge: yourExtraLargeLayoutSystemWidget(),
-				expanded: yourExpandedLargeLayoutSystemWidget(),
-			);
-		},
-    ),
+Builder(
+	builder: (context) {
+		return Material3LayoutWidget(
+			compact: yourCompactLayoutSystemWidget(),
+			medium: yourMediumLayoutSystemWidget(),
+			large: yourLargeLayoutSystemWidget(),
+			extraLarge: yourExtraLargeLayoutSystemWidget(),
+			expanded: yourExpandedLargeLayoutSystemWidget(),
+		);
+	},
+),
+```
+
+
+- Extension **fluent2LayoutValueOf**
+```dart
+final  something  =  context.fluent2LayoutValueOf<Alignment>(
+	small:  Alignment.top,
+	medium:  Alignment.bottomCenter,
+	large:  Alignment.topCenter,
+	xLarge:  Alignment.center,
+	xxLarge:  Alignment.topRight,
+	xxxLarge:  Alignment.topLeft,
+);
+```
+
+- Extension **m3LayoutValueOf**
+```dart
+final  something  =  context.m3LayoutValueOf<BoxFit>(
+	compact:  BoxFit.contain,
+	medium:  BoxFit.cover,
+	expanded:  BoxFit.fill,
+	large:  BoxFit.fitWidth,
+	extraLarge:  BoxFit.fitHeight,
+);
 ```
 
 ## Contributing

@@ -35,3 +35,26 @@ extension MediaQueryM3Extension on BuildContext {
 
   Material3Layout get material3Layout => _getScreenSize();
 }
+
+extension GenericM3LayoutValues on BuildContext {
+  T m3LayoutValueOf<T>({
+    required T compact,
+    required T medium,
+    required T expanded,
+    required T large,
+    required T extraLarge,
+  }) {
+    final layout = material3Layout;
+    if (layout == Material3Layout.compact) {
+      return compact;
+    } else if (layout == Material3Layout.medium) {
+      return medium;
+    } else if (layout == Material3Layout.expanded) {
+      return expanded;
+    } else if (layout == Material3Layout.large) {
+      return large;
+    } else {
+      return extraLarge;
+    }
+  }
+}

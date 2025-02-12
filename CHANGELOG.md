@@ -1,3 +1,10 @@
+## 0.0.8
+
+- add two extension on BuildContext, these are fluent2LayoutValueOf & m3LayoutValueOf
+- update readme
+- update example
+
+
 ## 0.0.7
 
 - remove basePadding

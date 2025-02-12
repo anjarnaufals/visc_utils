@@ -48,3 +48,29 @@ extension MediaQueryExtension on BuildContext {
 
   Fluent2Layout get fluent2Layout => _getFluent2Layout();
 }
+
+extension GenericFluent2LayoutValues on BuildContext {
+  T fluent2LayoutValueOf<T>({
+    required T small,
+    required T medium,
+    required T large,
+    required T xLarge,
+    required T xxLarge,
+    required T xxxLarge,
+  }) {
+    final layout = fluent2Layout;
+    if (layout == Fluent2Layout.small) {
+      return small;
+    } else if (layout == Fluent2Layout.medium) {
+      return medium;
+    } else if (layout == Fluent2Layout.large) {
+      return large;
+    } else if (layout == Fluent2Layout.xLarge) {
+      return xLarge;
+    } else if (layout == Fluent2Layout.xxLarge) {
+      return xxLarge;
+    } else {
+      return xxxLarge;
+    }
+  }
+}

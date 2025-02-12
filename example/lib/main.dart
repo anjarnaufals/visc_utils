@@ -266,7 +266,13 @@ class MaterialLayoutExample extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Material Layout ${context.material3Layout.name} Example",
+          "Material Layout ${context.material3Layout.name} Example || ${context.m3LayoutValueOf<BoxFit>(
+            compact: BoxFit.contain,
+            medium: BoxFit.cover,
+            expanded: BoxFit.fill,
+            large: BoxFit.fitWidth,
+            extraLarge: BoxFit.fitHeight,
+          )}",
           style: ViscTypo.titleLarge(context),
         ),
         actions: [
