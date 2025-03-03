@@ -4,6 +4,7 @@ import 'package:visc_utils/visc_utils.dart';
 import 'feat/fluent_2_layout_widget_example.dart';
 import 'feat/material_3_layout_widget_example.dart';
 import 'feat/responsive_font_size_example.dart';
+import 'feat/responsive_font_size_example_no_width_calculation.dart';
 import 'feat/responsive_margin_example.dart';
 
 const designWidth = 1280;
@@ -114,6 +115,8 @@ class _ExampleWidgetState extends State<ExampleWidget> {
                 ),
                 const Divider(),
                 const ResponsiveFontSizeExample(),
+                const Divider(),
+                const ResponsiveFontSizeNoWidthCalculationExample(),
                 const SizedBox(height: kToolbarHeight),
               ],
             ),

@@ -1,3 +1,9 @@
+## 0.0.10
+
+- fontsize optional affected by width calculation
+- fontsize calculation default affected by device pixel ratio
+- device pixel ratio multiplier for fontsize is 1.1 for dpr more then 2 and 1 below 2
+
 ## 0.0.9
 
 - change parameter of two extension on BuildContext, these are fluent2LayoutValueOf & m3LayoutValueOf become nullable
