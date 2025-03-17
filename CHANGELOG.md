@@ -1,3 +1,24 @@
+## 0.1.12
+
+- Change paramater on Material3LayoutWidget
+- Change paramater type **compact** on **Material3LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change paramater type **medium** on **Material3LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change paramater type **large** on **Material3LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change paramater type **extraLarge** on **Material3LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change paramater type **expanded** on **Material3LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- 
+- Change paramater on Fluent2LayoutWidget
+- Change Paramater type **small** on **Fluent2LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change Paramater type **medium** on **Fluent2LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change Paramater type **large** on **Fluent2LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change Paramater type **xLarge** on **Fluent2LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change Paramater type **xxLarge** on **Fluent2LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+- Change Paramater type **xxxLarge** on **Fluent2LayoutWidget** to **LayoutWidgetBuilder** from **Widget**;
+-
+- update example
+- update readme.md
+
+
 ## 0.0.11
 
 - add Orientation Lock Widget

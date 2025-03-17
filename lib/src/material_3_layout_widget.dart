@@ -11,27 +11,43 @@ class Material3LayoutWidget extends StatelessWidget {
     this.expanded,
   });
 
-  final Widget? compact;
-  final Widget? medium;
-  final Widget? large;
-  final Widget? extraLarge;
-  final Widget? expanded;
+  final LayoutWidgetBuilder? compact;
+  final LayoutWidgetBuilder? medium;
+  final LayoutWidgetBuilder? large;
+  final LayoutWidgetBuilder? extraLarge;
+  final LayoutWidgetBuilder? expanded;
 
   @override
   Widget build(BuildContext context) {
     var layout = context.material3Layout;
 
-    switch (layout) {
-      case Material3Layout.compact:
-        return compact ?? const SizedBox.shrink();
-      case Material3Layout.medium:
-        return medium ?? const SizedBox.shrink();
-      case Material3Layout.large:
-        return large ?? const SizedBox.shrink();
-      case Material3Layout.extraLarge:
-        return extraLarge ?? const SizedBox.shrink();
-      default:
-        return expanded ?? const SizedBox.shrink();
-    }
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        switch (layout) {
+          case Material3Layout.compact:
+            return compact != null
+                ? compact!(context, constraints)
+                : const SizedBox.shrink();
+          case Material3Layout.medium:
+            return medium != null
+                ? compact!(context, constraints)
+                : const SizedBox.shrink();
+          case Material3Layout.large:
+            return large != null
+                ? compact!(context, constraints)
+                : const SizedBox.shrink();
+
+          case Material3Layout.extraLarge:
+            return extraLarge != null
+                ? compact!(context, constraints)
+                : const SizedBox.shrink();
+
+          default:
+            return expanded != null
+                ? compact!(context, constraints)
+                : const SizedBox.shrink();
+        }
+      },
+    );
   }
 }

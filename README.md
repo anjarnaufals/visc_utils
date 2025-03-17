@@ -202,12 +202,12 @@ Text(
 Builder(
 	builder: (context) {
 		return Fluent2LayoutWidget(
-			small: yourSmallLayoutSystemWidget(),
-			medium: yourMediumLayoutSystemWidget(),
-			large: yourLargeLayoutSystemWidget(),
-			xLarge: yourxLargeLayoutSystemWidget(),
-			xxLarge: yourxxLargeLayoutSystemWidget(),
-			xxxLarge: yourxxxLargeLayoutSystemWidget(),
+			small:  (context, constraints) => yourSmallLayoutSystemWidget(),
+			medium: (context, constraints) => yourMediumLayoutSystemWidget(),
+			large: (context, constraints) => yourLargeLayoutSystemWidget(),
+			xLarge: (context, constraints) => yourxLargeLayoutSystemWidget(),
+			xxLarge: (context, constraints) => yourxxLargeLayoutSystemWidget(),
+			xxxLarge: (context, constraints) => yourxxxLargeLayoutSystemWidget(),
 		);
 	},
 ),
@@ -225,11 +225,11 @@ Builder(
 Builder(
 	builder: (context) {
 		return Material3LayoutWidget(
-			compact: yourCompactLayoutSystemWidget(),
-			medium: yourMediumLayoutSystemWidget(),
-			large: yourLargeLayoutSystemWidget(),
-			extraLarge: yourExtraLargeLayoutSystemWidget(),
-			expanded: yourExpandedLargeLayoutSystemWidget(),
+			compact:  (context, constraints) => yourCompactLayoutSystemWidget(),
+			medium: (context, constraints) => yourMediumLayoutSystemWidget(),
+			large: (context, constraints) => yourLargeLayoutSystemWidget(),
+			extraLarge:  (context, constraints) => yourExtraLargeLayoutSystemWidget(),
+			expanded:  (context, constraints) => yourExpandedLargeLayoutSystemWidget(),
 		);
 	},
 ),

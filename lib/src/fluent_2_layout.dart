@@ -8,16 +8,42 @@ class Fluent2Layout {
 
   const Fluent2Layout(this.name, this.minWidth, this.maxWidth, this.breakpoint);
 
-  // static const Fluent2Layout small = Fluent2Layout('Small', 320, 479, 640);
-  static const Fluent2Layout small = Fluent2Layout('Small', 0, 479, 640);
-  static const Fluent2Layout medium = Fluent2Layout('Medium', 480, 639, 1007);
-  static const Fluent2Layout large = Fluent2Layout('Large', 640, 1023, 1008);
-  static const Fluent2Layout xLarge =
-      Fluent2Layout('X-Large', 1024, 1365, 1008);
-  static const Fluent2Layout xxLarge =
-      Fluent2Layout('XX-Large', 1366, 1919, 1008);
-  static const Fluent2Layout xxxLarge =
-      Fluent2Layout('XXX-Large', 1920, double.infinity, 1008);
+  static const Fluent2Layout small = Fluent2Layout(
+    'Small',
+    0,
+    479,
+    640,
+  );
+  static const Fluent2Layout medium = Fluent2Layout(
+    'Medium',
+    480,
+    639,
+    1007,
+  );
+  static const Fluent2Layout large = Fluent2Layout(
+    'Large',
+    640,
+    1023,
+    1008,
+  );
+  static const Fluent2Layout xLarge = Fluent2Layout(
+    'X-Large',
+    1024,
+    1365,
+    1008,
+  );
+  static const Fluent2Layout xxLarge = Fluent2Layout(
+    'XX-Large',
+    1366,
+    1919,
+    1008,
+  );
+  static const Fluent2Layout xxxLarge = Fluent2Layout(
+    'XXX-Large',
+    1920,
+    double.infinity,
+    1008,
+  );
 
   static List<Fluent2Layout> get values => [
         small,

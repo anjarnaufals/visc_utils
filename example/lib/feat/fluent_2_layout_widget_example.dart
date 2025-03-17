@@ -24,7 +24,7 @@ class Fluent2LayoutWidgetExample extends StatelessWidget {
                   style: ViscTypo.headlineSmall(context),
                 );
                 return Fluent2LayoutWidget(
-                  small: Column(
+                  small: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -36,7 +36,7 @@ class Fluent2LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  medium: Column(
+                  medium: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -48,7 +48,7 @@ class Fluent2LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  large: Column(
+                  large: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -60,7 +60,7 @@ class Fluent2LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  xLarge: Column(
+                  xLarge: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -72,7 +72,7 @@ class Fluent2LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  xxLarge: Column(
+                  xxLarge: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -84,7 +84,7 @@ class Fluent2LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  xxxLarge: Column(
+                  xxxLarge: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

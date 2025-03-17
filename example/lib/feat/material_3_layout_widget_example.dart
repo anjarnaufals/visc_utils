@@ -25,7 +25,7 @@ class Material3LayoutWidgetExample extends StatelessWidget {
                 );
 
                 return Material3LayoutWidget(
-                  compact: Column(
+                  compact: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -37,7 +37,7 @@ class Material3LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  medium: Column(
+                  medium: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -49,7 +49,7 @@ class Material3LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  large: Column(
+                  large: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -61,7 +61,7 @@ class Material3LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  extraLarge: Column(
+                  extraLarge: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -73,7 +73,7 @@ class Material3LayoutWidgetExample extends StatelessWidget {
                       textInfoLayout,
                     ],
                   ),
-                  expanded: Column(
+                  expanded: (context, constraints) => Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

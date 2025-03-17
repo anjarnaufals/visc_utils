@@ -12,30 +12,46 @@ class Fluent2LayoutWidget extends StatelessWidget {
     this.xxxLarge,
   });
 
-  final Widget? small;
-  final Widget? medium;
-  final Widget? large;
-  final Widget? xLarge;
-  final Widget? xxLarge;
-  final Widget? xxxLarge;
+  final LayoutWidgetBuilder? small;
+  final LayoutWidgetBuilder? medium;
+  final LayoutWidgetBuilder? large;
+  final LayoutWidgetBuilder? xLarge;
+  final LayoutWidgetBuilder? xxLarge;
+  final LayoutWidgetBuilder? xxxLarge;
 
   @override
   Widget build(BuildContext context) {
     var layout = context.fluent2Layout;
 
-    switch (layout) {
-      case Fluent2Layout.small:
-        return small ?? const SizedBox.shrink();
-      case Fluent2Layout.medium:
-        return medium ?? const SizedBox.shrink();
-      case Fluent2Layout.large:
-        return large ?? const SizedBox.shrink();
-      case Fluent2Layout.xLarge:
-        return xLarge ?? const SizedBox.shrink();
-      case Fluent2Layout.xxLarge:
-        return xxLarge ?? const SizedBox.shrink();
-      default:
-        return xxxLarge ?? const SizedBox.shrink();
-    }
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        switch (layout) {
+          case Fluent2Layout.small:
+            return small != null
+                ? small!(context, constraints)
+                : const SizedBox.shrink();
+          case Fluent2Layout.medium:
+            return medium != null
+                ? medium!(context, constraints)
+                : const SizedBox.shrink();
+          case Fluent2Layout.large:
+            return large != null
+                ? large!(context, constraints)
+                : const SizedBox.shrink();
+          case Fluent2Layout.xLarge:
+            return xLarge != null
+                ? small!(context, constraints)
+                : const SizedBox.shrink();
+          case Fluent2Layout.xxLarge:
+            return xxLarge != null
+                ? xxLarge!(context, constraints)
+                : const SizedBox.shrink();
+          default:
+            return xxxLarge != null
+                ? xxLarge!(context, constraints)
+                : const SizedBox.shrink();
+        }
+      },
+    );
   }
 }

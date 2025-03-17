@@ -7,13 +7,31 @@ class Material3Layout {
 
   const Material3Layout(this.name, this.minWidth, this.maxWidth);
 
-  static const Material3Layout compact = Material3Layout('Compact', 0, 599);
-  static const Material3Layout medium = Material3Layout('Medium', 600, 839);
-  static const Material3Layout expanded =
-      Material3Layout('Expanded', 840, 1199);
-  static const Material3Layout large = Material3Layout('Large', 1200, 1599);
-  static const Material3Layout extraLarge =
-      Material3Layout('Extra-large', 1600, double.infinity);
+  static const Material3Layout compact = Material3Layout(
+    'Compact',
+    0,
+    599,
+  );
+  static const Material3Layout medium = Material3Layout(
+    'Medium',
+    600,
+    839,
+  );
+  static const Material3Layout expanded = Material3Layout(
+    'Expanded',
+    840,
+    1199,
+  );
+  static const Material3Layout large = Material3Layout(
+    'Large',
+    1200,
+    1599,
+  );
+  static const Material3Layout extraLarge = Material3Layout(
+    'Extra-large',
+    1600,
+    double.infinity,
+  );
 
   static List<Material3Layout> get values =>
       [compact, medium, expanded, large, extraLarge];

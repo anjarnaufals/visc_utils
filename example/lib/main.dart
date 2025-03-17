@@ -319,7 +319,7 @@ class MaterialLayoutExample extends StatelessWidget {
         ],
       ),
       body: Material3LayoutWidget(
-        compact: ListView.separated(
+        compact: (context, constraints) => ListView.separated(
           padding: viscAllMargin(context),
           itemCount: 12,
           itemBuilder: (_, __) {
@@ -332,7 +332,7 @@ class MaterialLayoutExample extends StatelessWidget {
             height: baseMarginOptimal(context),
           ),
         ),
-        medium: ListView.separated(
+        medium: (context, constraints) => ListView.separated(
           padding: viscAllMargin(context),
           itemCount: 12,
           itemBuilder: (context, index) {
@@ -345,7 +345,7 @@ class MaterialLayoutExample extends StatelessWidget {
             height: baseMarginOptimal(context),
           ),
         ),
-        large: GridView.builder(
+        large: (context, constraints) => GridView.builder(
           padding: viscAllMargin(context),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
@@ -359,7 +359,7 @@ class MaterialLayoutExample extends StatelessWidget {
             child: gridCardContent,
           ),
         ),
-        extraLarge: GridView.builder(
+        extraLarge: (context, constraints) => GridView.builder(
           padding: viscAllMargin(context),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
@@ -373,7 +373,7 @@ class MaterialLayoutExample extends StatelessWidget {
             child: gridCardContent,
           ),
         ),
-        expanded: GridView.builder(
+        expanded: (context, constraints) => GridView.builder(
           padding: viscAllMargin(context),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
@@ -512,7 +512,7 @@ class Fluent2LayoutExample extends StatelessWidget {
         ],
       ),
       body: Fluent2LayoutWidget(
-        small: ListView.separated(
+        small: (context, constraints) => ListView.separated(
           padding: viscAllMargin(context),
           itemCount: 12,
           itemBuilder: (context, index) {
@@ -525,7 +525,7 @@ class Fluent2LayoutExample extends StatelessWidget {
             height: baseMarginOptimal(context),
           ),
         ),
-        medium: ListView.separated(
+        medium: (context, constraints) => ListView.separated(
           padding: viscAllMargin(context),
           itemCount: 12,
           itemBuilder: (context, index) {
@@ -538,7 +538,7 @@ class Fluent2LayoutExample extends StatelessWidget {
             height: baseMarginOptimal(context),
           ),
         ),
-        large: GridView.builder(
+        large: (context, constraints) => GridView.builder(
           padding: viscAllMargin(context),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
@@ -552,7 +552,7 @@ class Fluent2LayoutExample extends StatelessWidget {
             child: gridCardContent,
           ),
         ),
-        xLarge: GridView.builder(
+        xLarge: (context, constraints) => GridView.builder(
           padding: viscAllMargin(context),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
@@ -566,7 +566,7 @@ class Fluent2LayoutExample extends StatelessWidget {
             child: gridCardContent,
           ),
         ),
-        xxLarge: GridView.builder(
+        xxLarge: (context, constraints) => GridView.builder(
           padding: viscAllMargin(context),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
@@ -580,7 +580,7 @@ class Fluent2LayoutExample extends StatelessWidget {
             child: gridCardContent,
           ),
         ),
-        xxxLarge: GridView.builder(
+        xxxLarge: (context, constraints) => GridView.builder(
           padding: viscAllMargin(context),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
