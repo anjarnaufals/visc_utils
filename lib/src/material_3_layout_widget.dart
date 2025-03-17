@@ -30,21 +30,21 @@ class Material3LayoutWidget extends StatelessWidget {
                 : const SizedBox.shrink();
           case Material3Layout.medium:
             return medium != null
-                ? compact!(context, constraints)
+                ? medium!(context, constraints)
                 : const SizedBox.shrink();
           case Material3Layout.large:
             return large != null
-                ? compact!(context, constraints)
+                ? large!(context, constraints)
                 : const SizedBox.shrink();
 
           case Material3Layout.extraLarge:
             return extraLarge != null
-                ? compact!(context, constraints)
+                ? extraLarge!(context, constraints)
                 : const SizedBox.shrink();
 
           default:
             return expanded != null
-                ? compact!(context, constraints)
+                ? expanded!(context, constraints)
                 : const SizedBox.shrink();
         }
       },

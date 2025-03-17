@@ -1,3 +1,7 @@
+## 0.1.13
+- fix typo on **Material3LayoutWidget**
+- fix typo on **Fluent2LayoutWidget**
+
 ## 0.1.12
 
 - Change paramater on Material3LayoutWidget

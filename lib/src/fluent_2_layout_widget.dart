@@ -40,7 +40,7 @@ class Fluent2LayoutWidget extends StatelessWidget {
                 : const SizedBox.shrink();
           case Fluent2Layout.xLarge:
             return xLarge != null
-                ? small!(context, constraints)
+                ? xLarge!(context, constraints)
                 : const SizedBox.shrink();
           case Fluent2Layout.xxLarge:
             return xxLarge != null
