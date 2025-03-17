@@ -19,14 +19,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Visc Utils Example',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
-        useMaterial3: true,
+    return OrientationLock(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Visc Utils Example',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
+          useMaterial3: true,
+        ),
+        home: const ExampleWidget(),
       ),
-      home: const ExampleWidget(),
     );
   }
 }
@@ -48,6 +50,31 @@ class _ExampleWidgetState extends State<ExampleWidget> {
     } else {
       marginRule.value = MarginRule.marginOptimal;
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      double screenWidthDp = MediaQuery.of(context).size.width;
+      bool isTablet = isDeviceTablet(context, 600);
+      ScaffoldMessenger.maybeOf(context)?.showMaterialBanner(
+        MaterialBanner(
+          backgroundColor: Colors.blueAccent,
+          content: Text(
+            "width = $screenWidthDp dp, Orientation Should Lock to ${isTablet ? "LANDSCAPE" : "POTRAIT"}",
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                ScaffoldMessenger.maybeOf(context)?.clearMaterialBanners();
+              },
+              child: const Text("close"),
+            ),
+          ],
+        ),
+      );
+    });
   }
 
   @override

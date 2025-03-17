@@ -259,6 +259,15 @@ final  something  =  context.m3LayoutValueOf<BoxFit>(
 );
 ```
 
+- Orientation Lock Widget
+
+```dart
+	OrientationLock(
+		kOrientationLockBreakpoint: 600,
+		child: yourChildWidget(),
+	);
+```
+
 ## Contributing
 
 We welcome contributions to Visc Utils. If you would like to contribute to the development or report issues, please follow these guidelines:

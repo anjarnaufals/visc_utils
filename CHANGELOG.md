@@ -1,5 +1,9 @@
 ## 0.0.10
 
+- add Orientation Lock Widget
+
+## 0.0.10
+
 - fontsize optional affected by width calculation
 - fontsize calculation default affected by device pixel ratio
 - device pixel ratio multiplier for fontsize is 1.1 for dpr more then 2 and 1 below 2
