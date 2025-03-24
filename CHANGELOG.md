@@ -1,3 +1,7 @@
+## 0.1.14
+- name changed to MediaQueryF2Extension from MediaQueryExtension that caused "ambiguous_extension_member_access".
+
+
 ## 0.1.13
 - fix typo on **Material3LayoutWidget**
 - fix typo on **Fluent2LayoutWidget**

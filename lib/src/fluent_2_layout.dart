@@ -55,7 +55,7 @@ class Fluent2Layout {
       ];
 }
 
-extension MediaQueryExtension on BuildContext {
+extension MediaQueryF2Extension on BuildContext {
   bool get isSmall => _getFluent2Layout().name == Fluent2Layout.small.name;
   bool get isMedium => _getFluent2Layout().name == Fluent2Layout.medium.name;
   bool get isLarge => _getFluent2Layout().name == Fluent2Layout.large.name;
