@@ -1,3 +1,6 @@
+## 0.1.15
+- rename extension isMediumF2 from isMedium on MediaQueryF2Extension;
+
 ## 0.1.14
 - name changed to MediaQueryF2Extension from MediaQueryExtension that caused "ambiguous_extension_member_access".
 
