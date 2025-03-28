@@ -1,3 +1,6 @@
+## 0.1.16
+- rename extension isLargeF2 from isLarge on MediaQueryF2Extension;
+
 ## 0.1.15
 - rename extension isMediumF2 from isMedium on MediaQueryF2Extension;
 
