@@ -190,6 +190,15 @@ Text(
 ),
 ```
 
+```dart
+Text(
+    'Define Size',
+		style: ViscTypo.defineSize(context,
+			size: YourSize,
+		),
+),
+```
+
 - Fluent 2 layout size extension on BuildContext
 
 ```dart

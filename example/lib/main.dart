@@ -1,3 +1,4 @@
+import 'package:example/feat/responsive_font_size_example_input_size.dart';
 import 'package:flutter/material.dart';
 import 'package:visc_utils/visc_utils.dart';
 
@@ -144,6 +145,8 @@ class _ExampleWidgetState extends State<ExampleWidget> {
                 const ResponsiveFontSizeExample(),
                 const Divider(),
                 const ResponsiveFontSizeNoWidthCalculationExample(),
+                const Divider(),
+                const ResponsiveFontSizeExampleInputSize(),
                 const SizedBox(height: kToolbarHeight),
               ],
             ),

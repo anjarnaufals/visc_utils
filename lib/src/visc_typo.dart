@@ -12,6 +12,11 @@ double _baseFontSize(
   double devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
   double devicePixelRatioMultiplier = devicePixelRatio > 2 ? 1.1 : 1.0;
 
+  // this logic still debatable
+  if (screenWidth <= 639) {
+    useWidthCalculation = false;
+  }
+
   if (screenWidth <= 479) {
     return useWidthCalculation
         ? fontSize * 0.75 * devicePixelRatioMultiplier
@@ -45,10 +50,34 @@ double _baseFontSize(
   }
 }
 
+/// using fluid typography with clamp() or viewport-based units for smoother, continuous scaling
+/// Calculates a responsive font size using a clamp-like approach.
+///
+/// Defaults:
+/// - [min] = base * 0.75
+/// - [max] = base * 1.5
+/// - [scalingFactor] = 0.0025 (0.25% of screen width)
+double _clampFontSize(
+  double base,
+  BuildContext context, {
+  double? min,
+  double? max,
+  double scalingFactor = 0.0025,
+}) {
+  final width = MediaQuery.of(context).size.width;
+
+  final double minFontSize = min ?? base * 0.75;
+  final double maxFontSize = max ?? base * 1.5;
+
+  final fluidFontSize = width * scalingFactor;
+  return fluidFontSize.clamp(minFontSize, maxFontSize);
+}
+
 class ViscTypo {
   static TextStyle? bodySmall(
     BuildContext context, {
     bool useWidthCalculation = true,
+    bool useClamp = false,
   }) =>
       Theme.of(context).textTheme.bodySmall?.copyWith(
             fontSize: _baseFontSize(context, 12,
@@ -178,6 +207,16 @@ class ViscTypo {
   }) =>
       Theme.of(context).textTheme.displayLarge?.copyWith(
             fontSize: _baseFontSize(context, 57,
+                useWidthCalculation: useWidthCalculation),
+          );
+
+  static TextStyle? defineSize(
+    BuildContext context, {
+    bool useWidthCalculation = true,
+    double? size,
+  }) =>
+      Theme.of(context).textTheme.bodyLarge?.copyWith(
+            fontSize: _baseFontSize(context, size ?? 16,
                 useWidthCalculation: useWidthCalculation),
           );
 }

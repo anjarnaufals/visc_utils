@@ -12,6 +12,11 @@ class ResponsiveFontSizeExample extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
+            'This Example Use Width Calculation',
+            style: ViscTypo.displayLarge(context),
+            textAlign: TextAlign.center,
+          ),
+          Text(
             'Display Large',
             style: ViscTypo.displayLarge(context),
           ),

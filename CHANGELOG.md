@@ -1,3 +1,7 @@
+## 0.2.17
+- add new static textstyle "defineSize" to visctypo.
+- add new calculation, if screenWidth <= 639 then useWidthCalculation is false.  
+
 ## 0.1.16
 - rename extension isLargeF2 from isLarge on MediaQueryF2Extension;
 
