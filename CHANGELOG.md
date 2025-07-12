@@ -1,3 +1,6 @@
+## 0.2.18
+- chore : remove unused element.
+
 ## 0.2.17
 - add new static textstyle "defineSize" to visctypo.
 - add new calculation, if screenWidth <= 639 then useWidthCalculation is false.  
