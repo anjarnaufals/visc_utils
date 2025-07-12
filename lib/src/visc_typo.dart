@@ -50,29 +50,6 @@ double _baseFontSize(
   }
 }
 
-/// using fluid typography with clamp() or viewport-based units for smoother, continuous scaling
-/// Calculates a responsive font size using a clamp-like approach.
-///
-/// Defaults:
-/// - [min] = base * 0.75
-/// - [max] = base * 1.5
-/// - [scalingFactor] = 0.0025 (0.25% of screen width)
-double _clampFontSize(
-  double base,
-  BuildContext context, {
-  double? min,
-  double? max,
-  double scalingFactor = 0.0025,
-}) {
-  final width = MediaQuery.of(context).size.width;
-
-  final double minFontSize = min ?? base * 0.75;
-  final double maxFontSize = max ?? base * 1.5;
-
-  final fluidFontSize = width * scalingFactor;
-  return fluidFontSize.clamp(minFontSize, maxFontSize);
-}
-
 class ViscTypo {
   static TextStyle? bodySmall(
     BuildContext context, {
